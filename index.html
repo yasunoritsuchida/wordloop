@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="WordLoop">
+  <meta name="theme-color" content="#000000">
+  <title>WordLoop</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+<div id="home" class="screen active">
+  <div class="orbit-stage">
+    <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o2b"></div>
+    <div class="orbit o3"></div><div class="orbit o4"></div><div class="orbit o4b"></div>
+    <div class="orbit o5"></div>
+  </div>
+  <div class="home-content">
+    <div class="app-title">WordLoop</div>
+    <div id="daily-msg" class="daily-msg" style="display:none"></div>
+    <div id="streak" class="streak-badge">🔥 0日連続</div>
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-val" id="mastered-count">0</div><div class="stat-lbl">覚えた単語</div></div>
+      <div class="stat-box"><div class="stat-val" id="score-display">0 UDc</div><div class="stat-lbl">累計スコア</div></div>
+    </div>
+    <div class="mastered-bar">
+      <div class="bar-lbl">マスター進捗</div>
+      <div class="bar-track"><div class="bar-fill" id="progress-fill" style="width:0%"></div></div>
+      <div class="bar-text" id="progress-text">0 / 0語</div>
+    </div>
+    <button class="start-btn" id="start-btn">START</button>
+  </div>
+</div>
+<div id="quiz" class="screen">
+  <div class="quiz-header">
+    <div class="q-num-wrap"><span class="q-num" id="q-num">1</span><span class="q-of">/ 10</span></div>
+    <div class="score-pill" id="score-live">0 UDc</div>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-bar-quiz" style="width:10%"></div></div></div>
+  <div class="combo-bar" id="combo-bar" style="display:none"><span id="combo-text"></span></div>
+  <div class="type-badge" id="q-type-badge">単語 → 意味</div>
+  <div class="q-card"><div class="q-text" id="q-text"></div><div class="q-hint" id="q-hint"></div></div>
+  <div class="choices" id="choices"></div>
+  <button class="next-btn" id="next-btn">次の問題 →</button>
+  <div id="fx-overlay"></div>
+</div>
+<div id="results" class="screen">
+  <div class="res-header">
+    <div class="res-title">セッション完了！</div>
+    <div class="res-sub">今日もお疲れさま</div>
+    <div class="res-score-big" id="res-score">0 UDc</div>
+    <div class="res-total" id="res-total-score"></div>
+    <div class="res-chips"><div class="res-chip" id="res-correct"></div><div class="res-chip" id="res-combo"></div></div>
+    <div class="res-bonus" id="res-bonus">🎉 全問正解！ボーナス +50 UDc</div>
+  </div>
+  <div class="res-body">
+    <div class="res-section-title">問題ごとの結果</div>
+    <div id="res-list"></div>
+    <button class="home-btn" id="home-btn">ホームへ戻る</button>
+  </div>
+</div>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>
